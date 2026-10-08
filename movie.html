@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHI TIẾT PHIM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="light-layer">
+        <div class="spot spot-1"></div>
+        <div class="spot spot-2"></div>
+        <div class="spot spot-3"></div>
+    </div>
+    <header>
+        <div class="container-fluid px-md-5">
+            <div class="row align-items-center">
+                <div class="col-auto py-2">
+                    <a href="index.html">
+                        <img src="https://cinestar.com.vn/assets/images/header-logo.png" alt="Cinestar" class="logo-large" style="width: 250px; height: auto; cursor: pointer; transition: transform 0.3s ease;">
+                    </a>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex flex-wrap justify-content-end align-items-center gap-4 py-2 border-bottom border-secondary border-opacity-25 pb-3">
+                        <button class="btn btn-yellow px-4 py-2 fw-bold" style="background: #fce700 !important; color: #000 !important; border-radius: 4px; border: none; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 14px; transition: all 0.3s ease;" onclick="window.location.href='lich-chieu.html'"><i class="fa fa-ticket me-1"></i> ĐẶT VÉ NGAY</button>
+                        <button class="btn btn-purple px-4 py-2 fw-bold" style="background: #6b319e !important; color: #fff !important; border-radius: 4px; border: none; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 14px; transition: all 0.3s ease;" onclick="window.location.href='bap-nuoc.html'"><i class="fa fa-bowl-food me-1"></i> ĐẶT BẮP NƯỚC</button>
+                        <form class="search-box" style="background: #fff; border-radius: 25px; padding: 8px 20px; display: flex; align-items: center; gap: 10px; min-width: 250px;" onsubmit="return doSiteSearch(event)">
+                            <input type="text" id="siteSearch" placeholder="Tìm phim, rạp" style="border: none; outline: none; background: transparent; color: #333; font-size: 14px; width: 100%;">
+                            <button type="submit" style="border: none; background: transparent; padding: 0;" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass" style="color: #888; font-size: 16px;"></i></button>
+                        </form>
+                        <a href="login.html" class="login-btn text-decoration-none d-flex align-items-center gap-2" style="color: #fff; text-decoration: none; font-size: 15px; font-weight: bold;">
+                            <i class="fa fa-user-circle fs-4"></i> Đăng nhập
+                        </a>
+                        <div class="language-selector" style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: #fff; font-weight: 700; font-size: 15px; border-left: 1px solid #555; padding-left: 15px;">
+                            <span>🇻🇳 VN</span> <i class="fa fa-chevron-down" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end align-items-center py-3 pt-3">
+                        <ul class="nav-links mb-0 ps-0 d-flex gap-5" style="list-style: none;">
+                            <li><a href="rap.html" style="color: #ffffff; font-size: 15px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px;"><i class="fa fa-map-marker-alt me-1"></i> CHỌN RẠP</a></li>
+                            <li><a href="lich-chieu.html" style="color: #ffffff; font-size: 15px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px;"><i class="fa fa-calendar-alt me-1"></i> LỊCH CHIẾU</a></li>
+                            <li><a href="khuyen-mai.html" style="color: #ffffff; font-size: 15px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px;">KHUYẾN MÃI</a></li>
+                            <li><a href="su-kien.html" style="color: #ffffff; font-size: 15px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px;">TỔ CHỨC SỰ KIỆN</a></li>
+                            <li><a href="gioi-thieu.html" style="color: #ffffff; font-size: 15px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px;">GIỚI THIỆU</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img id="moviePoster" src="" class="img-fluid rounded shadow" alt="Poster Phim" style="width: 100%; height: auto;">
+            </div>
+            <div class="col-md-8 text-light">
+                <h1 id="movieTitle" class="fw-bold mb-3">Tên phim</h1>
+                <p id="movieInfo" class="text-secondary mb-4"></p>
+                <h3 class="mt-4">NỘI DUNG PHIM</h3>
+                <p id="movieContent" class="mt-3" style="font-size: 16px; line-height: 1.8;"></p>
+                <div class="mt-4">
+                    <button class="btn btn-purple px-4 py-2">XEM TRAILER</button>
+                    <a href="lich-chieu.html" id="movieBookBtn" class="btn btn-yellow ms-2 px-4 py-2 fw-bold">ĐẶT VÉ NGAY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--footer-gradient); padding: 60px 0 20px; margin-top: 80px;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-12 col-lg-4 footer-info">
+                    <img src="https://cinestar.com.vn/assets/images/header-logo.png" alt="Logo" class="img-fluid mb-3" style="max-width: 140px;">
+                    <p class="font-weight-bold text-white mb-4">BE HAPPY, BE A STAR</p>
+                    <div class="d-flex gap-2 mb-4">
+                        <button class="btn btn-yellow px-3 py-2" style="font-size: 12px; font-weight: bold;" onclick="window.location.href='lich-chieu.html'">ĐẶT VÉ</button>
+                        <button class="btn btn-outline-white px-3 py-2" style="font-size: 12px; font-weight: bold;" onclick="window.location.href='bap-nuoc.html'">ĐẶT BẮP NƯỚC</button>
+                    </div>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#" class="text-white fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white fs-5" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p class="text-white font-weight-bold mb-0">Ngôn ngữ: 🇻🇳 VN</p>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 footer-col">
+                    <h4 class="text-white mb-3 fs-6 fw-bold">TÀI KHOẢN</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="login.html" class="text-decoration-none" style="color: #e2e8f0;">Đăng nhập</a></li>
+                        <li class="mb-2"><a href="register.html" class="text-decoration-none" style="color: #e2e8f0;">Đăng ký</a></li>
+                        <li class="mb-2"><a href="khuyen-mai.html" class="text-decoration-none" style="color: #e2e8f0;">Membership</a></li>
+                    </ul>
+                    <h4 class="text-white mb-3 mt-4 fs-6 fw-bold">XEM PHIM</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="onplaying.html" class="text-decoration-none" style="color: #e2e8f0;">Phim đang chiếu</a></li>
+                        <li class="mb-2"><a href="upcoming.html" class="text-decoration-none" style="color: #e2e8f0;">Phim sắp chiếu</a></li>
+                        <li class="mb-2"><a href="lich-chieu.html" class="text-decoration-none" style="color: #e2e8f0;">Lịch chiếu</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 footer-col">
+                    <h4 class="text-white mb-3 fs-6 fw-bold">THUÊ SỰ KIỆN</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="su-kien.html" class="text-decoration-none" style="color: #e2e8f0;">Thuê rạp</a></li>
+                        <li class="mb-2"><a href="su-kien.html#dich-vu" class="text-decoration-none" style="color: #e2e8f0;">Các loại hình cho thuê khác</a></li>
+                    </ul>
+                    <h4 class="text-white mb-3 mt-4 fs-6 fw-bold">CINESTAR</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="gioi-thieu.html" class="text-decoration-none" style="color: #e2e8f0;">Giới thiệu</a></li>
+                        <li class="mb-2"><a href="gioi-thieu.html#lien-he" class="text-decoration-none" style="color: #e2e8f0;">Liên hệ</a></li>
+                        <li class="mb-2"><a href="khuyen-mai.html" class="text-decoration-none" style="color: #e2e8f0;">Khuyến mãi</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-3 footer-col">
+                    <h4 class="text-white mb-3 fs-6 fw-bold">HỆ THỐNG RẠP</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="rap.html" class="text-decoration-none" style="color: #e2e8f0;">Tất cả hệ thống rạp</a></li>
+                        <li class="mb-2"><a href="rap.html?id=quoc-thanh" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Quốc Thanh (TP.HCM)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=parkcity" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Parkcity Hà Nội</a></li>
+                        <li class="mb-2"><a href="rap.html?id=sinh-vien" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Sinh Viên (TP.HCM)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=hue" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Huế (TP. Huế)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=da-lat" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Đà Lạt (Lâm Đồng)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=duc-trong" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Lâm Đồng (Đức Trọng)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=my-tho" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Mỹ Tho (Đồng Tháp)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=kien-giang" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Kiên Giang (An Giang)</a></li>
+                        <li class="mb-2"><a href="rap.html?id=satra-q6" class="text-decoration-none" style="color: #e2e8f0;">Cinestar Satra Quận 6 (TP.HCM)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 30px 0;">
+
+            <div class="row align-items-center mb-4">
+                <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 text-light" style="font-size: 13px;">© 2026 Cinestar. All rights reserved.</p>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-end">
+                    <a href="gioi-thieu.html" class="text-light text-decoration-none me-4" style="font-size: 13px;">Chính sách bảo mật</a>
+                    <a href="khuyen-mai.html" class="text-light text-decoration-none me-4" style="font-size: 13px;">Tin điện ảnh</a>
+                    <a href="gioi-thieu.html#lien-he" class="text-light text-decoration-none" style="font-size: 13px;">Hỏi và đáp</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center" style="font-size: 11px; color: #cbd5e1; line-height: 2;">
+                    <img src="images/dathongbao.jpg" alt="Bộ Công Thương" class="mb-3" style="width: 130px;">
+                    <p class="mb-1 fw-bold">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM - RẠP CHIẾU PHIM NGÔI SAO</p>
+                    <p class="mb-1">ĐỊA CHỈ: 271 NGUYỄN TRÃI, PHƯỜNG NGUYỄN CƯ TRINH, QUẬN 1, TP.HCM</p>
+                    <p class="mb-1">GIẤY CNĐKDN SỐ: 0312742744, CẤP BỞI SỞ KH&ĐT TP.HCM</p>
+                    <p class="demo-note mb-0">Website mô phỏng phục vụ Đồ án Thiết kế Web – Nhóm 7. Không phải website chính thức, không thực hiện giao dịch thật.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const movieId = params.get('id');
+
+        const moviesData = {
+            // PHIM ĐANG CHIẾU
+            "ma-xo": { title: "MA XÓ (T18)", director: "Phan Bá Hỷ", actors: "Lê Khánh, Tín Nguyễn, Avin Lu, Nguyễn Sỹ Hậu, Gi A Nguyễn, Leona Khánh Tiên, Chú 3 Duy", release: "05/06/2026", content: "Trong cái nghèo cùng cực và nỗi sợ mất con sau một lần sảy thai, cuộc sống của vợ chồng Phú và Thảo (đang mang thai) trở nên tăm tối hơn bao giờ hết khi bà Thuận (mẹ Phú) qua đời vì không có tiền chữa bệnh. Giữa lúc tuyệt vọng, Thảo nghe lời bà Tánh – một người hàng xóm làm nghề cúng – quyết định thực hiện nghi thức thỉnh “vong cô hồn” về làm ma xó để trấn giữ ngôi nhà và bảo vệ thai nhi. Khi thực thể trong xó nhà bắt đầu đòi nợ, Thảo mới bàng hoàng nhận ra: thứ cô rước về để bảo vệ gia đình, thực chất là một cơn ác mộng không có đường lui.", poster: "images/onplaying/ma-xo_1.png" },
+            "lau-chu-hoa": { title: "LẦU CHÚ HỎA (T18)", director: "Hùng Trần", actors: "Trần Kỳ Anh, Nguyễn Minh Thời, Ngọc Chi Bảo, Phụng Hoàng, Nguyễn Công Nương, Dũng Hà", release: "12/06/2026", content: "Lầu Chú Hỏa theo chân một nhóm streamer trẻ đột nhập vào căn biệt thự bỏ hoang gắn với truyền thuyết “con ma nhà họ Hứa”. Sự xâm phạm vào “vùng đất cấm” của họ đã vô tình đánh thức ác linh bị trấn yểm suốt hơn 100 năm. Với phong cách found footage tạo cảm giác như đang xem lại đoạn băng cuối cùng của nạn nhân, bộ phim hứa hẹn biến mỗi góc tối trong căn nhà cổ thành chuỗi bi kịch kinh hoàng và đẫm máu nhất mùa hè năm nay.", poster: "images/onplaying/lauchuhoa.png" },
+            "bay-xac-song": { title: "BẦY XÁC SỐNG (T18)", director: "Yeon Sang-ho", actors: "Jun Ji-hyun, Ji Chang-wook và Koo Kyo-hwan", release: "12/06/2026", content: "Cốt truyện bắt đầu tại một hội nghị công nghệ sinh học tầm cỡ, nơi Giáo sư Se Jeong vô tình chứng kiến một thảm kịch bùng phát mầm bệnh. Khi loại dịch bệnh bí ẩn lây lan, chính quyền buộc phải phong tỏa toàn bộ khu vực, giam cầm tất cả những người bên trong. Những người sống sót phải chiến đấu điên cuồng để thoát khỏi tòa nhà tử thần, đồng thời đối mặt với sự tiến hóa mất kiểm soát và đáng sợ hơn của lũ zombie.", poster: "images/onplaying/poster-colony.png" },
+            "doraemon": { title: "PHIM DORAEMON: NOBITA VÀ LÂU ĐÀI DƯỚI ĐÁY BIỂN", director: "Tetsuo Yajima", actors: "Wasabi Mizuta, Megumi Oohara, Yumi Kakazu, Subaru Kimura, Tomokazu Seki,...", release: "22/05/2026", content: "Bước vào kì nghỉ hè, Nobita và các bạn tranh cãi chí chóe về địa điểm cắm trại. Theo đề xuất của Doraemon, cả nhóm quyết định cắm trại giữa lòng đại dương! Sử dụng bảo bối thần kì “xe Buggy chạy dưới nước” và “đèn pin thích nghi”, 5 bạn nhỏ tận hưởng chuyến cắm trại dưới đáy biển, gặp gỡ vô vàn sinh vật lí thú trên đường đi. Sau khi phát hiện một chiếc tàu đắm, nhóm bạn đã gặp chàng thanh niên bí ẩn El. Thật bất ngờ, anh ta lại là cư dân đáy biển, sống tại “liên bang Mu”, một vùng biển rộng lớn! Vốn căm ghét người mặt đất, cư dân đáy biển không thể nào tin tưởng Nobita và các bạn. Đúng lúc đó, lời thông báo “lâu đài quỷ... đã bắt đầu phục sinh!!” được truyền tới. “Lâu đài quỷ” khiến cư dân đáy biển khiếp sợ, rốt cuộc là gì? Đặt trọn niềm tin vào bè bạn trong lồng ngực, chuyến phiêu lưu vĩ đại quyết định số phận của trái đất, bắt đầu!", poster: "images/onplaying/doraemon-2026.png" },
+            "ngoi-den-ky-quai": { title: "NGÔI ĐỀN KỲ QUÁI (T18)", director: "Phontharis Chotkijsadarsopon", actors: "Aim Witthawat Rattanaboonbaramee, James Bhuripat Vejvongsatechawat, Meen Phiravich Attachitsataporn, Tar Atiwat Saengtien, Kuan Denkhun Ngam-net, and Pond Khunnapat Pichetworawut", release: "29/05/2026", content: "Thương hiệu Kinh dị - Hài Thái Lan ăn khách nhất đã trở lại. Một năm sau khi đánh bại hồn ma Nak Tinn, nhóm bạn của Balloon và First chưa kịp tận hưởng cuộc sống bình yên thì một linh hồn báo thù bất ngờ quay trở lại và săn đuổi họ. Nhưng lần này mục tiêu của Pee Nak không phải là Balloon hay First mà là chú tiểu Nott và những người thân của cậu. Để phá giải lời nguyền “Kẻ nào được yêu thương thì phải chết”, cả nhóm buộc phải quay lại ngôi đền bí ẩn và đối mặt với thế lực tàn ác hơn bao giờ hết!", poster: "images/onplaying/peenak.png" },
+            "oc-muon-hon": { title: "ỐC MƯỢN HỒN (T16)", director: "Đinh Tuấn Vũ", actors: "Quốc Trường, Tiểu Vy, Anh Phạm, Yên Đan, Anh Đức, Lương Gia Huy, Nguyễn Văn Chung,...", release: "05/06/2026", content: "Câu chuyện kể về Quân – một người chồng đau khổ khi vợ qua đời trong một tai nạn bất ngờ. Hạnh phúc tưởng chừng được hồi sinh khi linh hồn vợ anh trở về trong thân xác của cô đồng nghiệp, người gặp tai nạn chung với vợ Quân nhưng may mắn sống sót. Giống như những con ốc mượn hồn, họ đều bám víu - lệ thuộc vào chiếc vỏ khác để tồn tại cũng như cố lẩn tránh nỗi đau của cuộc đời. Niềm vui ngắn ngủi tan biến khi một bí mật kinh hoàng liên quan đến cái chết của vợ anh được hé lộ, đặt Quân trước lựa chọn giữa việc tiếp tục bám víu, chấp nhận chiếc vỏ của hạnh phúc tự tạo hay phanh phui sự thật kinh hoàng bên trong chính chiếc vỏ này.", poster: "images/onplaying/oc.png" },
+            "he-man": { title: "HE-MAN VÀ CHIẾN BINH VŨ TRỤ (T13)", director: "Travis Knight", actors: "Nicholas Galitzine, Camila Mendes, Alison Brie, James Purefoy, Morena Baccarin, Jóhannes Haukur Jóhannesson, Charlotte Riley, Sasheer Zamata, Jon Xue Zhang, Christian Vunipola, featuring Kristen Wiig, with Jared Leto and Idris Elba", release: "12/06/2026", content: "Thương hiệu huyền thoại trở lại màn ảnh rộng. Sau 15 năm thất lạc, Thanh Gươm Quyền Năng đưa Hoàng tử Adam (Nicholas Galitzine) trở về hành tinh Eternia và phát hiện quê hương đã rơi vào sự cai trị tàn bạo của Skeletor (Jared Leto). Để cứu gia đình và thế giới của mình, Adam phải sát cánh cùng những đồng minh thân cận như Teela (Camila Mendes) và Duncan/Man-At-Arms (Idris Elba), đồng thời chấp nhận định mệnh thật sự của mình: trở thành He-Man - người đàn ông mạnh nhất vũ trụ.", poster: "images/onplaying/heman.png" },
+            "marsupilami": { title: "SIÊU QUẬY MARSUPILAMI (P)", director: "Philippe Lacheau", actors: "Philippe Lacheau, Jamel Debbouze, Tarek Boudal", release: "05/06/2026", content: "Để cứu lấy công việc, David Ticoule chấp nhận vận chuyển một kiện hàng bí ẩn từ Nam Mỹ về Pháp. Anh đưa con trai Léo và vợ cũ Tess đi cùng, vô tình kéo họ vào một phi vụ nguy hiểm mà chính anh cũng chưa kịp hiểu rõ. Mọi thứ nhanh chóng vượt khỏi tầm kiểm soát khi kiện hàng bị mở ra ngoài ý muốn. Bên trong là một sinh vật nhỏ bé, đáng yêu nhưng kéo theo hàng loạt rắc rối không tưởng. Từ một chuyến đi tưởng chừng đơn giản, hành trình trên biển bỗng biến thành chuỗi tình huống dở khóc dở cười. Giữa đại dương, họ phải học cách tin tưởng và sát cánh bên nhau để vượt qua hỗn loạn, đồng thời bảo vệ chính gia đình mình.", poster: "images/onplaying/marsupilami-poster.png" },
+            "your-name": { title: "YOUR NAME: TÊN CẬU LÀ GÌ? (T13)", director: "Shinkai Makoto", actors: "Kamiki Ryunosuke, Kamishiraishi Mone, Narita Ryo", release: "05/06/2026", content: "Hai nhân vật chính: một nam sinh thành thị (Taki Tachibana) với cuộc sống nhộn nhịp, và một nữ sinh vùng quê (Mitsuha Miyamizu), vô tình bị hoán đổi thân thể cho nhau liên tục qua những giấc mơ. Chàng trai cố gắng giúp cô gái thoát khỏi thảm họa, còn cô gái giúp chàng trai hẹn hò với mối tình đơn phương bấy lâu nay. Để rồi chính ngôi sao chổi, thảm họa những tưởng cướp đi mạng sống của cả ngôi làng, hóa ra lại chính là vận may giúp họ nhận ra rằng đâu mới là nửa kia đích thực của cuộc đời mình.", poster: "images/onplaying/your-name-poster.png" },
+            "lop-hoc-am-sat": { title: "LỚP HỌC ÁM SÁT: GIỜ CỦA CHÚNG TA (T16)", director: "Masaki Kitamura", actors: "Shintaro Asanuma; Mai Fuchigami; Saki Fujita", release: "05/06/2026", content: "Phim điện ảnh phiên bản hoàn toàn mới của “Lớp Học Ám Sát” nhân dịp kỷ niệm 10 năm ra mắt! Một sinh vật mang vận tốc Mach 20 đe dọa hủy diệt Trái Đất nhưng lại trở thành một thầy giáo? Một lớp học bị coi là phế thải bỗng chốc trở thành hy vọng cuối cùng của nhân loại? Những câu chuyện mới toanh chưa từng được kể trên màn ảnh sẽ mang đến cho fan hâm mộ những thước phim bùng nổ cùng ký ức rực rỡ nhất về thầy Koro và tập thể lớp 3-E. Bạn đã sẵn sàng cho buổi tốt nghiệp đặc biệt này chưa?", poster: "images/onplaying/lop-hoc-am-sat.png" },
+            "kumathong": { title: "KUMATHONG ÁC QUỶ DẪN ĐƯỜNG (T18)", director: "Hadrah Daeng Ratu", actors: "Padung Songsang, Kapol Thongplub, Nicky Na Chat Juntapun", release: "29/05/2026", content: "Một người mẹ đơn thân, vì tương lai của đứa con trai gần như mù lòa, quyết liều mình băng qua khu rừng ma ám trong đêm tối. Nhưng khi một tà linh từ Alas Roban bắt đầu chiếm hữu đứa trẻ, cô buộc phải đối mặt với những thế lực siêu nhiên kinh hoàng và bước vào hành trình tìm kiếm sự cứu rỗi tâm linh trước khi mất đi tất cả.", poster: "images/onplaying/alas.png" },
+            "digital-circus": { title: "THE AMAZING DIGITAL CIRCUS: HỒI KẾT (K)", director: "Gooseworx", actors: "Chưa cập nhật", release: "05/06/2026", content: "Loạt phim đình đám The Amazing Digital Circus sẽ khép lại với phiên bản chiếu rạp được chờ mong nhất mùa hè. Hồi Kết của loạt phim bao gồm tập 8 cùng tập cuối chưa từng được công bố - tập phim thứ 9, và các fans sẽ là những người đầu tiên trên thế giới thưởng thức thước phim này! Khi Caine ra đi và ánh đèn rạp xiếc vụt tắt, chỉ còn lại những ám ảnh và tội lỗi trong quá khứ dằn vặt các thành viên. Khi viễn cảnh về sự vĩnh cửu dần trở nên mờ nhòa, các thành viên cũng phát hiện ra sự thật về The Amazing Digital Circus và lịch sử đằng sau nó. Liệu họ sẽ chấp nhận hiện thực này, hay sẽ đưa ra một lựa chọn mạo hiểm nào khác?", poster: "images/onplaying/hoi-ket.png" },
+
+            // PHIM SẮP CHIẾU
+            "yen-chi-khau": { title: "YÊN CHI KHÂU (T18)", director: "Stanley Kwan", actors: "Mai Diễm Phương, Trương Quốc Vinh", release: "12/06/2026", content: "Lấy bối cảnh Hồng Kông thập niên 1930, Yên Chi Khâu kể về mối tình đầy ngang trái giữa Trần Chấn Bang - Thập Nhị Thiếu Gia (Trương Quốc Vinh thủ vai) — vị thiếu gia ăn chơi của một gia tộc quyền thế — và Như Hoa (Mai Diễm Phương thủ vai), một kỹ nữ nổi tiếng. Vì bị gia đình ruồng bỏ và ngăn cản quyết liệt, cặp đôi tuyệt vọng đã cùng nhau lập một lời thề tự sát để được bên nhau mãi mãi. Tuy nhiên, định mệnh trớ trêu khi Chấn Bang lại không đủ can đảm để thực hiện lời hứa đó. 50 năm sau, linh hồn Như Hoa vẫn mòn mỏi đợi chờ và quay trở lại một Hồng Kông hiện đại, phồn hoa để tìm kiếm người tình. Tại đây, cô bàng hoàng nhận ra Chấn Bang giờ chỉ còn là một ông lão tiều tụy, sống kiếp tầm gửi, nghèo khổ và tẻ nhạt. Khi thời gian sắp cạn kiệt, Như Hoa phải đối mặt với cơ hội cuối cùng để kiểm chứng sự thủy chung và lòng tận hiến của người đàn ông cô từng hết mực yêu thương. Đầy đam mê, cảm động và được thực hiện một cách tinh tế, Yên Chi Khâu là tác phẩm kinh điển không thể bỏ qua đối với những khán giả của điện ảnh nghệ thuật.", poster: "images/upcoming/rouge.png" },
+            "gintama": { title: "GINTAMA: YOSHIWARA TRONG BIỂN LỬA (T16)", director: "Ando Naoya, Arai Yojirou, Enomoto Mamoru", actors: "Sugita Tomokazu, Kugimiya Rie, Sakaguchi Daisuke", release: "12/06/2026", content: "Yoshiwara — khu phố đèn đỏ khổng lồ nằm sâu dưới lòng đất, nơi quyền lực của pháp luật không thể vươn tới. Một thành phố của màn đêm vĩnh cửu, nơi những dục vọng cuộn xoáy và ánh mặt trời không bao giờ chiếu rọi. Tại Edo, Sakata Gintoki — chủ tiệm Vạn Sự (Yorozuya) chuyên nhận mọi công việc kỳ lạ — tình cờ gặp Seita, một cậu bé mồ côi sống bằng nghề móc túi. Seita cho biết cậu đang tìm kiếm người mẹ thất lạc từ lâu của mình và tin rằng Hinowa, vị Oiran (hoa khôi kỹ viện) nổi tiếng nhất Yoshiwara, có thể chính là mẹ ruột của cậu. Các kỹ nữ của Yoshiwara đều nằm dưới sự cai trị của Housen, “Dạ Vương” khét tiếng. Trong tộc chiến binh Yato hiếu chiến, Housen sở hữu sức mạnh áp đảo; hắn đã thâu tóm toàn bộ lợi ích của Yoshiwara và tùy ý hưởng thụ khối tài sản cùng quyền lực khổng lồ. “Cháu chỉ muốn được gặp mẹ một lần thôi, dù chỉ trong chốc lát.” Để thực hiện mong ước nhỏ bé ấy của cậu bé, Gintoki và những người đồng hành quyết định hành động. Liệu những mối liên kết và tình cảm giữa họ có thể thắp sáng màn đêm bao trùm nơi này hay không?", poster: "images/upcoming/gintama.png" },
+            "mesdames-thanh-sac": { title: "MESDAMES THANH SẮC", director: "Thắng Vũ", actors: "Thanh Hằng, Hồng Ánh", release: "19/06/2026", content: "Madames Thanh Sắc xoay quanh cuộc đời của đại mỹ nhân Cầm Thanh (Thanh Hằng) và Madame Sắc (Hồng Ánh) - bà chủ vũ trường Kim Đô vô cùng giàu có và sở hữu nhiều kim cương. Dù ở dưới trướng của bà Sắc và từng bước trở thành vũ nữ đình đám nhất Sài Gòn những năm 1960, nhưng Cầm Thanh luôn muốn nổi loạn. Từ đó, hai người phụ nữ bắt đầu cuộc giằng co căng thẳng dẫn đến những sự kiện gây rúng động.", poster: "images/upcoming/mesdames-thanh-sac.png" },
+            "tung-hoanh-tu-hai": { title: "TUNG HOÀNH TỨ HẢI", director: "Ngô Vũ Sâm", actors: "Châu Nhuận Phát, Trương Quốc Vinh, Chung Sở Hồng, Tăng Giang", release: "19/06/2026", content: "Dưới sự dạy dỗ của một trùm tội phạm, ba đứa trẻ mồ côi lớn lên thành những tên trộm tác phẩm nghệ thuật. Tình yêu khiến vấn đề thêm rối ren khi bộ ba này bị lừa.", poster: "images/upcoming/tung-hoanh-tu-hai.png" },
+            "supergirl": { title: "SUPERGIRL (T13)", director: "Craig Gillespie", actors: "Milly Alcock, Matthias Schoenaerts, Eve Ridley, David Krumholtz, Emily Beecham, Jason Momoa,...", release: "26/06/2026", content: "Supergirl – bom tấn mới nhất từ DC Studios – sẽ chính thức đổ bộ các rạp chiếu toàn cầu vào mùa hè này, với Milly Alcock đảm nhận vai kép Supergirl/Kara Zor-El. Khi một kẻ thù bất ngờ và tàn nhẫn giáng đòn ngay tại nơi cô gọi là nhà, Kara Zor-El – hay còn được biết đến với cái tên Supergirl – buộc phải bắt tay với một đồng minh không ai ngờ tới, bắt đầu chuyến hành trình xuyên dải ngân hà đầy sử thi, nơi vừa là cuộc trả thù, vừa là hành trình đi tìm công lý.", poster: "images/upcoming/super-girl-poster.png" },
+            "minions": { title: "MINIONS & QUÁI VẬT", director: "Pierre Coffin", actors: "Đang cập nhật", release: "01/07/2026", content: "Minions & Quái Vật là câu chuyện vừa náo loạn, vừa ngớ ngẩn nhưng “hoàn toàn có thật” về cách Minions chinh phục Hollywood, trở thành ngôi sao điện ảnh, rồi mất tất cả, vô tình thả quái vật ra khắp thế giới và sau đó phải cùng nhau hợp sức để cứu lấy hành tinh khỏi chính mớ hỗn loạn mà mình tạo ra.", poster: "images/upcoming/minions-poster.png" },
+            "moana": { title: "HÀNH TRÌNH CỦA MOANA LT", director: "Thomas Kail", actors: "Catherine Laga'aia, Dwayne Johnson, John Tui", release: "10/07/2026", content: "Trong Moana, phiên bản live-action tái hiện lại cuộc phiêu lưu hoạt hình được yêu mến và từng được đề cử Oscar® của Disney, Moana (Catherine Lagaʻaia) đáp lại tiếng gọi của đại dương và lần đầu tiên rời xa rạn san hô bao quanh hòn đảo Motunui để lên đường cùng á thần huyền thoại Maui (Dwayne Johnson) trong một hành trình phi thường nhằm khôi phục sự thịnh vượng cho dân tộc mình. Bộ phim được đạo diễn bởi Thomas Kail, người từng giành giải Emmy® và Tony Award® (Hamilton); sản xuất bởi Dwayne Johnson, Dany Garcia, Beau Flynn, Hiram Garcia và Lin-Manuel Miranda; đồng thời được điều hành sản xuất bởi Kail, Scott Sheldon, Charles Newirth và Auliʻi Cravalho – người từng lồng tiếng cho Moana trong hai phần phim hoạt hình Moana và Moana 2. Moana quy tụ các ca khúc gốc do Lin-Manuel Miranda, Opetaia Foaʻi và Mark Mancina sáng tác, cùng phần nhạc nền nguyên bản do Mark Mancina đảm nhiệm. Khán giả sẽ được đắm mình trong những khung hình mãn nhãn, âm thanh sống động và các giai điệu cuốn hút của Moana, độc quyền tại các rạp chiếu phim từ ngày 10 tháng 7 năm 2026", poster: "images/upcoming/moana_1.png" },
+            "quy-nhap-xac": { title: "QUỶ NHẬP XÁC: ĐÒI MẠNG", director: "Đang cập nhật", actors: "Đang cập nhật", release: "17/07/2026", content: "Thông tin nội dung phim đang được cập nhật...", poster: "images/upcoming/danur.png" },
+            "odyssey": { title: "THE ODYSSEY", director: "Christopher Nolan", actors: "Benny Safdie, Anne Hathaway, Matt Damon, Robert Pattinson, Tom Holland, Zendaya, Charlize Theron…", release: "17/07/2026", content: "The Odyssey lấy cảm hứng từ trường ca của Homer, ghi hình hoàn toàn bằng máy quay phim Imax, có kinh phí ước tính 250 triệu USD. Tác phẩm lấy cảm hứng từ thần thoại Hy Lạp, trong đó Matt Damon vào vai Odysseus, người anh hùng mất 10 năm trở về quê nhà sau cuộc chiến thành Troy. Nhân vật chạm trán với các vị thần, quái vật, trải qua nhiều thử thách để đoàn tụ vợ và giành lại vương quốc.", poster: "images/upcoming/odyssey.png" },
+            "nguoi-nhen": { title: "NGƯỜI NHỆN: KHỞI ĐẦU MỚI", director: "Destin Daniel Cretton", actors: "Tom Holland, Zendaya, Sadie Sink", release: "31/07/2026", content: "Không còn Tony Stark, MJ hay Ned kề cận, Peter buộc phải đơn thân độc mã đối diện với phe đối đầu bí ẩn. Tuy nhiên, khi áp lực ngày càng gia tăng, nó kích hoạt một sự biến đổi thể chất bất ngờ, đe dọa chính sự tồn tại của anh. Đồng thời, một chuỗi tội phạm bí ẩn mới xuất hiện, kéo theo một trong những mối đe dọa mạnh mẽ nhất mà Spider-Man từng đối mặt.", poster: "images/upcoming/spiderman-poster.png" },
+            "soi-chi-do": { title: "SỢI CHỈ ĐỎ", director: "Hàm Trần", actors: "Đoàn Minh Anh, Quang Tuấn, Ba Tây, Loube Nguyễn, Trần Nghĩa, Cao Thùy Linh, Gia Tuệ, Ngọc Phước, Thư Nguyễn,...", release: "14/08/2026", content: "Một kẻ cuồng tín sau cơn đau đầu dữ dội phát hiện ra mình có một con mắt dọc trên trán. Những vụ sát nhân hàng loạt. Những hồn ma bóng quỷ lẩn khuất trong đời sống. Những nỗi sợ rình rập từ ám ảnh quá khứ. Sợi Chỉ Đỏ là gì, và sẽ kết nối tất cả như thế nào?", poster: "images/upcoming/soi-chi-do.png" },
+            "pho-oak": { title: "NGÀY TÀN CỦA PHỐ OAK", director: "David Robert Mitchell", actors: "Anne Hathaway, Ewan McGregor, Maisy Stella, Christian Convery,...", release: "14/08/2026", content: "Sau khi một thảm họa thiên nhiên xé toạc Phố Oak khỏi khu ngoại ô và đưa con phố đến một nơi xa lạ, gia đình Platt nhanh chóng nhận ra rằng chỉ bằng cách luôn đứng bên nhau, họ mới có thể vượt qua vận mệnh nghiệt ngã này.", poster: "images/upcoming/oak.png" }
+        };
+
+        if (movieId && moviesData[movieId]) {
+            const movie = moviesData[movieId];
+            document.getElementById('movieTitle').innerText = movie.title;
+            document.getElementById('moviePoster').src = movie.poster;
+
+            document.getElementById('movieInfo').innerHTML = `
+                    <p><strong>Đạo diễn:</strong> ${movie.director}</p>
+                    <p><strong>Diễn viên:</strong> ${movie.actors}</p>
+                    <p><strong>Khởi chiếu:</strong> ${movie.release}</p>
+                `;
+            document.getElementById('movieContent').innerText = movie.content;
+            // Phim đang chiếu → mở lịch chiếu của phim; phim sắp chiếu → ẩn nút đặt vé
+            const bookBtn = document.getElementById('movieBookBtn');
+            if (findMovie(movieId)) bookBtn.href = 'lich-chieu.html?movie=' + movieId;
+            else { bookBtn.textContent = 'SẮP CHIẾU'; bookBtn.classList.add('disabled'); }
+        }
+    </script>
+</body>
+</html>

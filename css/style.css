@@ -1,0 +1,827 @@
+﻿:root {
+    --primary-yellow: #fce700;
+    --primary-purple: #6b319e;
+    --dark-bg: #0f172a;
+    --header-bg: #131b2f;
+    --card-bg: #1e293b;
+    --text-light: #ffffff;
+    --footer-gradient: linear-gradient(135deg, #4c2691 0%, #2b55a1 100%);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--dark-bg) !important;
+    color: var(--text-light);
+    line-height: 1.6;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+}
+.light-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: -1;
+}
+
+.spot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); 
+    opacity: 0.7;
+}
+
+.spot-1 {
+    top: 10%;
+    left: 15%;
+    width: 400px;
+    height: 400px;
+    background: #6b319e;
+    box-shadow: 0 0 100px #6b319e; 
+}
+
+.spot-2 {
+    bottom: 10%;
+    right: 15%;
+    width: 350px;
+    height: 350px;
+    background: #2b55a1;
+    box-shadow: 0 0 100px #2b55a1;
+}
+
+.spot-3 {
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: #fce700;
+    opacity: 0.3;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: var(--header-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+}
+
+/* Kích thước Logo to gấp đôi tầm ~2 dòng */
+.logo-large {
+    width: 220px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .logo-large:hover {
+        transform: scale(1.02);
+    }
+
+.nav-links {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+    .nav-links li a {
+        color: var(--text-light);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+    }
+
+        .nav-links li a:hover {
+            color: var(--primary-yellow);
+        }
+
+.search-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #333;
+        font-size: 13px;
+    }
+
+    .search-box i {
+        color: #888;
+    }
+
+.login-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+    .login-btn:hover {
+        color: var(--primary-yellow);
+    }
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* ================= NÚT BẤM ================= */
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.btn-yellow {
+    background: var(--primary-yellow) !important;
+    color: #000 !important;
+}
+
+    .btn-yellow:hover {
+        background: #e6d200 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(252, 231, 0, 0.4);
+    }
+
+.btn-purple {
+    background: var(--primary-purple) !important;
+    color: #fff !important;
+}
+
+    .btn-purple:hover {
+        background: #562582 !important;
+        transform: translateY(-2px);
+    }
+
+.btn-outline-yellow {
+    background: transparent;
+    color: var(--primary-yellow);
+    border: 1px solid var(--primary-yellow);
+    padding: 10px 40px;
+}
+
+    .btn-outline-yellow:hover {
+        background: var(--primary-yellow);
+        color: #000;
+    }
+
+.btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 12px;
+}
+
+.center-btn-container {
+    text-align: center;
+    margin: 30px 0 50px;
+}
+
+/* ================= THANH ĐẶT VÉ & TIÊU ĐỀ ================= */
+.booking-bar {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.form-input {
+    padding: 10px;
+    color: #333;
+    font-weight: 600;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn-purple-submit {
+    background: var(--primary-purple);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn-purple-submit:hover {
+        background: #562582;
+    }
+
+.section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ================= CARD PHIM ================= */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: transparent;
+    justify-content: flex-start;
+}
+
+.poster-wrapper {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    height: auto;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    font-size: 0;
+    line-height: 0;
+}
+
+    .poster-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+.movie-card:hover .poster-wrapper {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(252, 231, 0, 0.3);
+}
+
+.movie-tags {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    z-index: 2;
+}
+
+.movie-content {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 5px;
+}
+
+.tag-2d {
+    background: var(--primary-yellow);
+    color: #000;
+    padding: 3px 6px;
+    font-weight: 900;
+    font-size: 11px;
+    border-radius: 3px 0 0 3px;
+}
+
+.tag-age {
+    color: #fff;
+    padding: 3px 8px;
+    font-weight: 900;
+    font-size: 11px;
+    border-radius: 0 3px 3px 0;
+    text-transform: uppercase;
+}
+
+.bg-p {
+    background: #00a651;
+}
+
+.bg-k {
+    background: #00a8e8;
+}
+
+.bg-t13 {
+    background: #f7941d;
+}
+
+.bg-t16 {
+    background: #f26522;
+}
+
+.bg-t18 {
+    background: #ed1c24;
+}
+
+.bg-chuaphanloai {
+    background: #ed1c24;
+}
+
+.movie-title {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    line-height: 1.3;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-card-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-trailer {
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+    .btn-trailer i {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .btn-trailer:hover, .btn-trailer:hover i {
+        color: var(--primary-yellow);
+    }
+
+.card-btn-submit {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 4px;
+    border: none;
+    background: #fce700 !important;
+    color: #000 !important;
+}
+
+    .card-btn-submit:hover {
+        transform: scale(1.05);
+    }
+/* ================= PROMOS & MEMBER ================= */
+.promo-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.promo-card:hover img {
+    transform: translateY(-5px);
+}
+
+.membership-section {
+    margin-top: 50px;
+}
+
+.member-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.member-card p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* ================= CONTACT & FORM ================= */
+.contact-left h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.social-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #3b5998;
+    color: #fff;
+    padding: 15px;
+    width: 250px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0 auto 20px;
+}
+
+    .social-contact-btn.zalo {
+        background: #4a6eb0;
+    }
+
+.contact-form-card {
+    background: #2b55a1;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+    .contact-form-card h3 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .contact-form-card p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #e2e8f0;
+    }
+
+    .contact-form-card i {
+        color: var(--primary-yellow);
+        margin-right: 10px;
+    }
+
+/* ================= SEAT MAP ================= */
+.seat-legend {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.seat {
+    width: 45px !important; 
+    height: 45px !important; 
+    font-size: 13px !important;
+    border-radius: 6px; 
+    border: 1.5px solid #0dcaf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.seat-map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5%;
+    overflow-x: auto;
+}
+
+.d-flex.justify-content-center {
+    gap: 12px !important; 
+    margin-bottom: 12px !important;
+}
+/* Ghế Thường */
+.seat.standard {
+    border: 2px solid #0dcaf0;
+    color: #0dcaf0;
+}
+/* Ghế VIP */
+.seat.vip {
+    border: 2px solid #ffc107; /* Màu vàng VIP */
+    color: #ffc107;
+}
+/* Ghế Couple */
+.seat.couple {
+    width: 105px !important;
+    height: 45px !important;
+    border: 2px solid #d63384;
+    color: #d63384;
+    background: rgba(214, 51, 132, 0.1);
+    border-radius: 6px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+    
+
+
+.seat:hover:not(.sold):not(.selected) {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.seat.sold {
+    background-color: #495057 !important;
+    border-color: #495057 !important;
+    color: #ced4da !important;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.seat.selected {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(25, 135, 84, 0.6);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    background-image: none !important;
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.8));
+}
+
+/* =========================================================
+   CÁC TRANG MỚI: Chọn rạp, Lịch chiếu, Khuyến mãi,
+   Tổ chức sự kiện, Giới thiệu, Bắp nước
+   ========================================================= */
+
+.nav-links li a.active { color: var(--primary-yellow) !important; }
+
+/* ---------- Banner đầu trang ---------- */
+.page-hero {
+    padding: 70px 0 50px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(107, 49, 158, 0.35) 0%, rgba(15, 23, 42, 0) 100%);
+}
+.page-hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.page-hero p { color: #cbd5e1; max-width: 680px; margin: 0 auto; font-size: 17px; }
+.page-hero .hero-eyebrow {
+    display: inline-block; color: var(--primary-yellow); font-weight: 800;
+    letter-spacing: 2px; font-size: 13px; margin-bottom: 10px; text-transform: uppercase;
+}
+
+.glass-card {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.sub-title {
+    font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px;
+    border-left: 4px solid var(--primary-yellow); padding-left: 12px;
+}
+
+/* ---------- Bộ lọc dạng chip ---------- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.filter-chip {
+    background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px; padding: 8px 20px; font-weight: 700; font-size: 14px; transition: 0.25s;
+}
+.filter-chip:hover { border-color: var(--primary-yellow); color: var(--primary-yellow); }
+.filter-chip.active { background: var(--primary-yellow); border-color: var(--primary-yellow); color: #000; }
+
+/* ---------- Thanh chọn ngày ---------- */
+.date-bar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.date-pill {
+    flex: 0 0 auto; min-width: 92px; background: rgba(255, 255, 255, 0.06); color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 10px 12px;
+    display: flex; flex-direction: column; align-items: center; transition: 0.25s;
+}
+.date-pill:hover { border-color: var(--primary-yellow); }
+.date-pill.active { background: var(--primary-purple); border-color: var(--primary-yellow); }
+.date-pill-label { font-size: 13px; color: #cbd5e1; }
+.date-pill.active .date-pill-label { color: #fff; }
+.date-pill-day { font-size: 18px; font-weight: 900; }
+
+/* ---------- Thẻ rạp ---------- */
+.cinema-card {
+    display: flex; gap: 16px; align-items: flex-start; height: 100%;
+    background: rgba(30, 41, 59, 0.85); border: 2px solid transparent; border-radius: 12px;
+    padding: 20px; cursor: pointer; transition: 0.25s;
+}
+.cinema-card:hover { transform: translateY(-3px); border-color: rgba(252, 231, 0, 0.5); }
+.cinema-card.active { border-color: var(--primary-yellow); box-shadow: 0 0 20px rgba(252, 231, 0, 0.25); }
+.cinema-card-icon {
+    flex: 0 0 48px; height: 48px; border-radius: 10px; background: var(--primary-purple);
+    display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--primary-yellow);
+}
+.cinema-card-name { font-weight: 800; font-size: 17px; margin-bottom: 6px; text-transform: uppercase; }
+.cinema-card-addr { color: #cbd5e1; font-size: 14px; margin-bottom: 4px; }
+.cinema-card-meta { color: var(--primary-yellow); font-size: 13px; font-weight: 600; margin-bottom: 0; }
+.cinema-detail-name { font-weight: 900; text-transform: uppercase; font-size: 26px; margin-bottom: 10px; }
+
+/* ---------- Lịch chiếu ---------- */
+.schedule-row {
+    display: flex; gap: 20px; padding: 20px; margin-bottom: 16px;
+    background: rgba(30, 41, 59, 0.85); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.schedule-poster { flex: 0 0 110px; }
+.schedule-poster img { width: 110px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 8px; }
+.schedule-body { flex: 1; min-width: 0; }
+.schedule-title { color: #fff; font-weight: 800; font-size: 18px; text-decoration: none; text-transform: uppercase; }
+.schedule-title:hover { color: var(--primary-yellow); }
+.schedule-genre { color: #94a3b8; font-size: 14px; margin-bottom: 12px; }
+.showtime-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.showtime-btn {
+    display: inline-flex; flex-direction: column; align-items: center; min-width: 78px;
+    padding: 8px 14px; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 8px;
+    color: #fff; text-decoration: none; font-weight: 800; font-size: 16px; line-height: 1.2; transition: 0.2s;
+}
+.showtime-btn small { font-size: 11px; font-weight: 600; color: #94a3b8; }
+.showtime-btn:hover { background: var(--primary-yellow); border-color: var(--primary-yellow); color: #000; }
+.showtime-btn:hover small { color: #333; }
+
+.empty-state { text-align: center; padding: 50px 20px; color: #94a3b8; }
+.empty-state i { font-size: 44px; margin-bottom: 12px; color: var(--primary-purple); }
+
+.form-dark, .form-dark:focus {
+    background: #0f172a; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.form-dark:focus { border-color: var(--primary-yellow); box-shadow: 0 0 0 0.2rem rgba(252, 231, 0, 0.2); }
+.form-dark::placeholder { color: #64748b; }
+.form-dark option, .form-dark optgroup { background: #1e293b; color: #fff; }
+.form-label { font-weight: 600; font-size: 14px; color: #e2e8f0; }
+
+/* ---------- Khuyến mãi ---------- */
+.promo-item {
+    height: 100%; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;
+    background: rgba(30, 41, 59, 0.85); border-radius: 12px; transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.promo-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(252, 231, 0, 0.2); }
+.promo-item-media { aspect-ratio: 16 / 9; overflow: hidden; }
+.promo-item-media img { width: 100%; height: 100%; object-fit: cover; }
+.promo-item-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #6b319e 0%, #2b55a1 100%); font-size: 64px; color: var(--primary-yellow);
+}
+.promo-item-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.promo-item-body h5 { font-weight: 800; font-size: 18px; }
+.promo-item-body p { color: #cbd5e1; font-size: 14px; flex: 1; }
+.promo-item-link { color: var(--primary-yellow); font-weight: 700; font-size: 14px; }
+
+.modal-dark .modal-content { background: #1e293b; color: #fff; border: 1px solid #6b319e; }
+.modal-dark .modal-header, .modal-dark .modal-footer { border-color: rgba(255, 255, 255, 0.1); }
+
+/* ---------- Tổ chức sự kiện ---------- */
+.service-card {
+    height: 100%; text-align: center; padding: 30px 24px;
+    background: rgba(30, 41, 59, 0.85); border-radius: 12px; transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.service-card:hover { transform: translateY(-5px); border-color: rgba(252, 231, 0, 0.5); }
+.service-icon {
+    width: 70px; height: 70px; margin: 0 auto 18px; border-radius: 50%;
+    background: var(--primary-purple); display: flex; align-items: center; justify-content: center;
+    font-size: 28px; color: var(--primary-yellow);
+}
+.service-card h5 { font-weight: 800; text-transform: uppercase; font-size: 17px; }
+.service-card p { color: #cbd5e1; font-size: 14px; min-height: 66px; }
+
+.step-item { text-align: center; padding: 10px; }
+.step-number {
+    width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 12px;
+    background: var(--primary-yellow); color: #000; font-weight: 900; font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+}
+.step-item h6 { font-weight: 800; text-transform: uppercase; }
+.step-item p { color: #cbd5e1; font-size: 14px; margin-bottom: 0; }
+
+.feature-list { list-style: none; padding: 0; margin: 0; }
+.feature-list li { padding: 8px 0; color: #e2e8f0; }
+.feature-list li i { color: var(--primary-yellow); margin-right: 10px; }
+
+/* ---------- Giới thiệu ---------- */
+.stat-box {
+    text-align: center; padding: 26px 10px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(107, 49, 158, 0.6), rgba(43, 85, 161, 0.6));
+}
+.stat-number { font-size: 38px; font-weight: 900; color: var(--primary-yellow); line-height: 1.1; }
+.stat-label { font-size: 14px; color: #e2e8f0; text-transform: uppercase; font-weight: 700; }
+
+.value-card { text-align: center; padding: 26px 20px; height: 100%; }
+.value-card i { font-size: 36px; color: var(--primary-yellow); margin-bottom: 14px; }
+.value-card h5 { font-weight: 800; text-transform: uppercase; }
+.value-card p { color: #cbd5e1; font-size: 14px; margin-bottom: 0; }
+
+.about-cinema {
+    display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05); color: #fff; text-decoration: none; transition: 0.2s; height: 100%;
+}
+.about-cinema i { color: var(--primary-yellow); margin-top: 4px; }
+.about-cinema small { color: #94a3b8; }
+.about-cinema:hover { background: rgba(252, 231, 0, 0.12); color: #fff; }
+
+/* ---------- Bắp nước ---------- */
+.combo-card {
+    position: relative; height: 100%; text-align: center; padding: 26px 18px 20px;
+    background: rgba(30, 41, 59, 0.9); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; flex-direction: column; transition: 0.25s;
+}
+.combo-card:hover { border-color: rgba(252, 231, 0, 0.5); }
+.combo-tag {
+    position: absolute; top: 12px; right: 12px; background: var(--primary-purple); color: #fff;
+    font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase;
+}
+.combo-icon {
+    width: 72px; height: 72px; margin: 0 auto 14px; border-radius: 50%;
+    background: radial-gradient(circle, #fce700 0%, #f59e0b 100%); color: #000;
+    display: flex; align-items: center; justify-content: center; font-size: 30px;
+}
+.combo-name { font-weight: 800; text-transform: uppercase; }
+.combo-desc { color: #cbd5e1; font-size: 13px; flex: 1; }
+.combo-price { color: var(--primary-yellow); font-weight: 900; font-size: 20px; margin-bottom: 12px; }
+.qty-control { display: inline-flex; align-items: center; gap: 14px; margin: 0 auto; }
+.qty-btn {
+    width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--primary-yellow);
+    background: transparent; color: var(--primary-yellow); font-size: 20px; font-weight: 700; line-height: 1;
+    display: flex; align-items: center; justify-content: center; transition: 0.2s;
+}
+.qty-btn:hover { background: var(--primary-yellow); color: #000; }
+.qty-value { min-width: 22px; font-size: 18px; font-weight: 800; }
+
+.cart-panel { position: sticky; top: 170px; }
+.summary-list { list-style: none; padding: 0; margin: 0 0 12px; }
+.summary-list li {
+    display: flex; justify-content: space-between; gap: 10px; padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); font-size: 15px;
+}
+#cartList { list-style: none; padding: 0; margin: 0 0 12px; }
+#cartList li {
+    display: flex; justify-content: space-between; gap: 10px; padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); font-size: 15px;
+}
+.summary-total {
+    display: flex; justify-content: space-between; font-size: 20px; font-weight: 900; padding-top: 6px;
+}
+.summary-total span:last-child { color: var(--primary-yellow); }
+
+.pay-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pay-method {
+    display: flex; align-items: center; gap: 8px; padding: 10px 12px; cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; font-size: 14px;
+}
+.pay-method input { accent-color: var(--primary-yellow); }
+.pay-method:has(input:checked) { border-color: var(--primary-yellow); background: rgba(252, 231, 0, 0.08); }
+
+/* ---------- Thông tin suất chiếu ở trang chọn ghế ---------- */
+.booking-info {
+    display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+    max-width: 900px; margin: 30px auto 0;
+}
+.booking-info-poster { width: 80px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; }
+
+.demo-note { font-size: 11px; color: #cbd5e1; opacity: 0.8; }
+
+/* ---------- Responsive cho header ---------- */
+@media (max-width: 991px) {
+    header .nav-links { gap: 18px !important; flex-wrap: wrap; justify-content: center; }
+    header .nav-links li a { font-size: 13px !important; }
+    .cart-panel { position: static; }
+}
+@media (max-width: 575px) {
+    .schedule-row { flex-direction: column; }
+    .schedule-poster { flex-basis: auto; }
+    .pay-methods { grid-template-columns: 1fr; }
+}
+
+.form-dark { color-scheme: dark; }
+
+@media (max-width: 575px) {
+    header .logo-large { width: 160px !important; }
+    header .search-box { min-width: 0 !important; flex: 1 1 100%; }
+    header .btn { padding: 8px 14px !important; font-size: 12px !important; }
+}
