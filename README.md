@@ -288,7 +288,7 @@ This project was developed for educational purposes to practice:
 
 ## 👨‍💻 Authors
 
-**Group 7** – giapchithanh06
+Giáp Chí Thanh
 
 Student Project – Web Design Course
 
