@@ -13,10 +13,10 @@ The website also includes pages for **promotions, event & cinema rental services
 ## 🌐 Live Demo
 
 **Website**
-[https://giapchithanh06.github.io/MovieTicketBooking/](https://giapchithanh06.github.io/MovieTicketBooking/)
+[https://giapchithanh06.github.io/MovieTicketBooking-Management-System/](https://giapchithanh06.github.io/MovieTicketBooking-Management-System/)
 
 **GitHub Repository**
-[https://github.com/giapchithanh06/MovieTicketBooking](https://github.com/giapchithanh06/MovieTicketBooking)
+[https://github.com/giapchithanh06/MovieTicketBooking-Management-System](https://github.com/giapchithanh06/MovieTicketBooking-Management-System)
 
 ## 🚀 Features
 
@@ -240,7 +240,7 @@ Showtimes / Cinema / Quick Booking
 **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/giapchithanh06/MovieTicketBooking.git
+git clone https://github.com/giapchithanh06/MovieTicketBooking-Management-System.git
 ```
 
 **2. Open the Project**
